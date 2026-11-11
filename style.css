@@ -1,0 +1,101 @@
+body {
+    font-family: 'Prompt', sans-serif;
+    padding-top: 62px;
+}
+
+/* 1. Hero Section & Background Video Overlay */
+.hero-section {
+    position: relative;
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: 1;
+}
+
+.video-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0.7) 0%, rgba(15, 23, 42, 0.5) 100%);
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+}
+
+/* 2. Custom CSS Animations */
+.fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 3. Carousel Slider Image */
+.carousel-img {
+    height: 450px;
+    object-fit: cover;
+}
+
+/* 4. Custom CSS Grid & Flexbox Layout */
+.custom-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.card-footer-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.service-card {
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12) !important;
+}
+
+.service-card img {
+    height: 220px;
+    object-fit: cover;
+}
+
+/* 5. Media Queries สำหรับ Mobile & Tablet */
+@media (max-width: 768px) {
+    .hero-section {
+        height: 70vh;
+    }
+    .carousel-img {
+        height: 260px;
+    }
+    .custom-grid {
+        grid-template-columns: 1fr;
+    }
+}
